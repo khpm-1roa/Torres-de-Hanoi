@@ -15,3 +15,21 @@ void Hanoi(int n, int origen,  int auxiliar, int destino){
      Hanoi(n-1, auxiliar, origen, destino);
    }
 }
+........
+void main() {
+  int numeroDePiezas = 12;
+  Hanoi(numeroDePiezas, 1, 2, 3);
+}
+
+void Hanoi(int numeroDePiezas, int primeraPosicion, int segundaPosicion,
+    int terceraPosicion) {
+  if (numeroDePiezas == 1)
+    print('mover disco de $primeraPosicion a $terceraPosicion');
+  else {
+    Hanoi(
+        numeroDePiezas - 1, primeraPosicion, terceraPosicion, segundaPosicion);
+    print('mover disco de  $primeraPosicion a  $terceraPosicion');
+    Hanoi(
+        numeroDePiezas - 1, segundaPosicion, primeraPosicion, terceraPosicion);
+  }
+}
